@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'ایران یکان', Arial, sans-serif;
+            text-align: center;
+            padding: 10px;
+            background-color: #8f9779;
+        }
+        input[type="password"], button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 10px auto;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #043927;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: white;
+            background-color: red;
+            padding: 10px;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="button" onclick="checkPassword()">Confirm</button>
+    </form>
+    
+    <div id="errorMessage" class="error">Try again.</div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password.toLowerCase() === "hello") {
+                window.open("https://drive.google.com/file/d/1ri7ftGiHiJLHiJzvnNog1TBeeEY1NRDA/view", "_blank");
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+                setTimeout(function() {
+                    document.getElementById("errorMessage").style.display = "none";
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
